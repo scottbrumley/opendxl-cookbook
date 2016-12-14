@@ -18,8 +18,8 @@
 ## How to get this repo working
 
 1. git clone https://github.com/scottbrumley/opendxl-cookbook.git
-2. Run vssh.sh
-3. cd opendxl-cookbook/
+2. cd opendxl-cookbook/
+3. Run vssh.sh
 4. At vagrant@vagrant-ubuntu-trusty-64:/ prompt type cd /vagrant
 
 ### Example dxlclient.config
