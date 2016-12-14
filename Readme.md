@@ -2,7 +2,7 @@
 
 ## Prerequisites
 
-* Put your broker certs in the brokercerts/ directory
+* Put your broker certs in the brokercerts/ directory./vs
 * Put your client certificates in the certs/ directory
 * Edit dxlclient.config and add your Broker(s)
 
@@ -13,6 +13,7 @@
 4. Run installer for Git
 5. git clone https://github.com/scottbrumley/opendxl-cookbook.git
 6. Run vssh.sh
+7. cd opendxl-cookbook/
 7. At vagrant@vagrant-ubuntu-trusty-64:/ prompt type cd /vagrant
 
 ## How to get certs Setup
