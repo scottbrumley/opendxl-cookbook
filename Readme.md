@@ -2,9 +2,12 @@
 
 ## Prerequisites
 
+### For Repo
 * Put your broker certs in the brokercerts/ directory./vs
 * Put your client certificates in the certs/ directory
 * Edit dxlclient.config and add your Broker(s)
+
+### For Automated Environment
 * Vagrant
 * Virtualbox
 * Git
