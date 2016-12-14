@@ -3,8 +3,8 @@
 ## Prerequisites
 
 ### For Repo
-* Put your broker certs in the brokercerts/ directory
-* Put your client certificates in the certs/ directory
+* Put your broker certs in the brokercerts/ directory [Certificate Setup](./cert_setup.md)
+* Put your client certificates in the certs/ directory [Certificate Setup](./cert_setup.md)
 * Edit dxlclient.config and add your Broker(s)
 
 ### For Automated Environment
@@ -17,12 +17,10 @@
 
 ## How to get this repo working
 
-1. Run vssh.sh
-2. cd opendxl-cookbook/
-3. At vagrant@vagrant-ubuntu-trusty-64:/ prompt type cd /vagrant
-
-## How to get certs Setup
-[Certificate Setup](./cert_setup.md)
+1. git clone https://github.com/scottbrumley/opendxl-cookbook.git
+2. Run vssh.sh
+3. cd opendxl-cookbook/
+4. At vagrant@vagrant-ubuntu-trusty-64:/ prompt type cd /vagrant
 
 ### Example dxlclient.config
 ```
