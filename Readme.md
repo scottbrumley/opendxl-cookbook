@@ -6,6 +6,18 @@
 * Put your client certificates in the certs/ directory
 * Edit dxlclient.config and add your Broker(s)
 
+## How to get this repo working
+1. Download Vagrant https://www.vagrantup.com/downloads.html
+2. Run installer for Vagrant
+3. Download Git https://git-scm.com/downloads
+4. Run installer for Git
+5. git clone https://github.com/scottbrumley/opendxl-cookbook.git
+6. Run vssh.sh
+7. At vagrant@vagrant-ubuntu-trusty-64:/ prompt type cd /vagrant
+
+## How to get certs Setup
+[Certificate Setup](./cert_setup.md)
+
 ### Example dxlclient.config
 ```
 [Certs]
@@ -17,18 +29,6 @@ PrivateKey=/vagrant/certs/client.key
 unique_broker_id_1=broker_id_1;broker_port_1;broker_hostname_1;broker_ip_1
 unique_broker_id_2=broker_id_2;broker_port_2;broker_hostname_2;broker_ip_2
 ```
-
-## How to get certs Setup
-[Certificate Setup](./cert_setup.md)
-
-## How to get repo working
-1. Download Vagrant https://www.vagrantup.com/downloads.html
-2. Run installer for Vagrant
-3. Download Git https://git-scm.com/downloads
-4. Run installer for Git
-5. git clone https://github.com/scottbrumley/opendxl-cookbook.git
-6. Run vssh.sh
-7. At vagrant@vagrant-ubuntu-trusty-64:/ prompt type cd /vagrant
 
 ### Example
 ```
