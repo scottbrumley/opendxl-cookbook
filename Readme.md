@@ -48,8 +48,7 @@ You will want to grab an MD5 out of TIE to test with.
 
 http://127.0.0.1:5000/tie/somemd5hash/somesha1hash
 
-You can also do both and MD5 and SHA1 hash
-
+You can also search with both and MD5 and SHA1 hash
 
 ## Phoenix the Environment
 If you want to burn the whole things to the ground just use this command.
@@ -61,6 +60,29 @@ If you want to burn the whole things to the ground just use this command.
 ```
 vagrant ssh
 ```
+
+### About Flask
+  http://flask.pocoo.org/
+ 
+Flask Uses and Environment variable to locate the python program.  It is set in the scripts/bootstrap.sh upon build of the vagrant environment.
+  ```
+  sudo echo 'export FLASK_APP=/vagrant/tie_rep_api.py' >> /etc/bash.bashrc
+  ```
+
+### About Vagrant
+https://www.vagrantup.com/
+
+Vagrant uses the Vagrantfile to build environment.  Important lines:
+```
+config.vm.box = "ubuntu/trusty64"
+config.vm.network "forwarded_port", guest: 5000, host: 5000
+config.vm.provision "shell", path: "scripts/bootstrap.sh"
+```
+
+### About Git
+https://git-scm.com
+
+Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.
 
 ## LICENSE
 
