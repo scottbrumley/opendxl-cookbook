@@ -8,15 +8,11 @@
 * Edit dxlclient.config and add your Broker(s)
 
 ### For Automated Environment
-* Vagrant
-* Virtualbox
-* Git
-
-    1. Download Vagrant https://www.vagrantup.com/downloads.html
-    2. Run installer for Vagrant
-    3. Download Virtualbox https://www.virtualbox.org/wiki/Downloads?replytocom=98578
-    4. Run installer for Virtualbox
-    3. Download Git https://git-scm.com/downloads
+1. Download Vagrant https://www.vagrantup.com/downloads.html
+2. Run installer for Vagrant
+3. Download Virtualbox https://www.virtualbox.org/wiki/Downloads?replytocom=98578
+4. Run installer for Virtualbox
+3. Download Git https://git-scm.com/downloads
 
 
 ## How to get this repo working
