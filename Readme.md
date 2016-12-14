@@ -51,8 +51,9 @@ http://127.0.0.1:5000/tie/somemd5hash/somesha1hash
 You can also search with both and MD5 and SHA1 hash
 
 ## Phoenix the Environment
-If you want to burn the whole things to the ground just use this command.
+If you want to burn the whole thing to the ground just exit the guest and use this command.
 ```
+exit
 ./vclean.ssh
 ```
 
