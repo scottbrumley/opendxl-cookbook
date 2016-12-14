@@ -19,7 +19,7 @@
 
 1. git clone https://github.com/scottbrumley/opendxl-cookbook.git
 2. cd opendxl-cookbook/
-3. Run vssh.sh
+3. Run vssh.sh (On Windows Launch from Git Bash)
 4. At vagrant@vagrant-ubuntu-trusty-64:/ prompt type cd /vagrant
 
 ### Example dxlclient.config
@@ -36,7 +36,7 @@ unique_broker_id_2=broker_id_2;broker_port_2;broker_hostname_2;broker_ip_2
 
 ### Example
 ```
-./vssh.sh or sometimes on windows just vssh.sh
+./vssh.sh
 ```
 
 
