@@ -13,6 +13,7 @@ sudo openssl verify -verbose -CAfile ca.crt client.crt
 ```
 
 ## ePO Certificate Authority (CA) Import
+Copy to certs/ folder.
 ```
 1. Navigate to Server Settings and select the DXL Certificates setting on the left navigation bar.
 2. Click the Edit button in the lower right corner (as shown in the image above)
@@ -25,7 +26,7 @@ The imported Certificate Authority (CA) information will propagate to the DXL br
 ```
 
 ## ePO Broker Certificates Export
-Copy Broker Certificates into brokercerts
+Copy Broker Certificates into brokercerts/ folder.
 ```
 The certificate information for DXL Brokers must be available to DXL clients attempting to connect to the fabric. This certificate information allows clients to ensure the Brokers being connected to are valid (via mutual authentication).
 
@@ -43,7 +44,7 @@ The following steps walk through the process to export the DXL Broker certificat
 ```
 
 ## ePO Broker List Export
-Copy the Broker List Into dxlclient.config
+Edit the Broker List in dxlclient.config with this information.
 ```
 1. Navigate to Server Settings and select the DXL Certificates setting on the left navigation bar.
 2. Click the Edit button in the lower right corner (as shown in the image above)
