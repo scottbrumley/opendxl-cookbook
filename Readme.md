@@ -56,9 +56,14 @@ If you want to burn the whole things to the ground just use this command.
 ./vclean.ssh
 ```
 
-## Get Kicked out of ubuntu
+## How to SSH into vagrant guest
 ```
 vagrant ssh
+```
+
+## How to exit vagrant guest
+```
+exit
 ```
 
 ### About Flask
