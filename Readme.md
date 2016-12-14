@@ -36,7 +36,7 @@ unique_broker_id_2=broker_id_2;broker_port_2;broker_hostname_2;broker_ip_2
 
 ### Example
 ```
-./vssh.sh
+./vssh.sh or sometimes on windows just vssh.sh
 ```
 
 
