@@ -60,6 +60,11 @@ else
     echo "Need OpenSSL version ${REQ_SSL_VER} or higher"
 fi
 
+### Create Directories
+sudo mkdir -p /vagrant/brokercerts
+sudo mkdir -p /vagrant/certs
+sudo touch /vagrant/dxlclient.config
+
 ## Setup Flask
 ## Use flask run --host=0.0.0.0 to start Flask
 sudo pip install Flask
