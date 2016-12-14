@@ -5,16 +5,22 @@
 * Put your broker certs in the brokercerts/ directory./vs
 * Put your client certificates in the certs/ directory
 * Edit dxlclient.config and add your Broker(s)
+* Vagrant
+* Virtualbox
+* Git
+
+    1. Download Vagrant https://www.vagrantup.com/downloads.html
+    2. Run installer for Vagrant
+    3. Download Virtualbox https://www.virtualbox.org/wiki/Downloads?replytocom=98578
+    4. Run installer for Virtualbox
+    3. Download Git https://git-scm.com/downloads
+
 
 ## How to get this repo working
-1. Download Vagrant https://www.vagrantup.com/downloads.html
-2. Run installer for Vagrant
-3. Download Git https://git-scm.com/downloads
-4. Run installer for Git
-5. git clone https://github.com/scottbrumley/opendxl-cookbook.git
-6. Run vssh.sh
-7. cd opendxl-cookbook/
-7. At vagrant@vagrant-ubuntu-trusty-64:/ prompt type cd /vagrant
+
+1. Run vssh.sh
+2. cd opendxl-cookbook/
+3. At vagrant@vagrant-ubuntu-trusty-64:/ prompt type cd /vagrant
 
 ## How to get certs Setup
 [Certificate Setup](./cert_setup.md)
