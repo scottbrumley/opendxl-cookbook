@@ -22,6 +22,16 @@
 3. Run vssh.sh (On Windows Launch from Git Bash)
 4. At vagrant@vagrant-ubuntu-trusty-64:/ prompt type cd /vagrant
 
+## Running TIE Web API Recipe
+1. Run 'flask run --host=0.0.0.0'
+2. Connect http://127.0.0.1:5000/tie/somemd5hash
+
+You will want to grab an MD5 out of TIE to test with.  
+
+http://127.0.0.1:5000/tie/somemd5hash/somesha1hash
+
+You can also search with both and MD5 and SHA1 hash
+
 ### Example dxlclient.config
 ```
 [Certs]
@@ -42,17 +52,6 @@ unique_broker_id_2=broker_id_2;broker_port_2;broker_hostname_2;broker_ip_2
 
 Be Patient while the environment builds.  Vagrant will build a Ubuntu environment to play around with.
 8. Once built cd /vagrant
-
-
-## Running TIE Web API Recipe
-1. Run 'flask run --host=0.0.0.0'
-2. Connect http://127.0.0.1:5000/tie/somemd5hash
-
-You will want to grab an MD5 out of TIE to test with.  
-
-http://127.0.0.1:5000/tie/somemd5hash/somesha1hash
-
-You can also search with both and MD5 and SHA1 hash
 
 ## Phoenix the Environment
 If you want to burn the whole thing to the ground just exit the guest and use this command.
