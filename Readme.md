@@ -26,6 +26,8 @@
 1. Run 'flask run --host=0.0.0.0'
 2. Connect http://127.0.0.1:5000/tie/somemd5hash
 
+### A good test is to try: http://127.0.0.1:5000/about
+
 You will want to grab an MD5 out of TIE to test with.  
 
 http://127.0.0.1:5000/tie/somemd5hash/somesha1hash
