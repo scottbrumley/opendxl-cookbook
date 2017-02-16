@@ -80,22 +80,9 @@ def get_tie_file_reputation(client, md5_hex, sha1_hex):
     else:
         raise Exception("Error: " + res.error_message + " (" + str(res.error_code) + ")")
 
-# Create the client
-#with DxlClient(config) as client:
-
-    # Connect to the fabric
-    #client.connect()
-
-    #
-    # Request and display reputation for Putty
-    #
-    #response_dict = get_tie_file_reputation(client=client,
-    #                                        md5_hex="BA78410702F0CC8453DA1AFBB2A8B670",
-    #                                        sha1_hex="1083245AC66D4261F526D18D4EAC79A7DBD72989")
-    #print "Putty reputation:"
-    #print json.dumps(response_dict, sort_keys=True, indent=4, separators=(',', ': '))
-
+## TIE Reputation Average Map
 tiescoreMap = {1:'Known Malicious', 15: 'Most Likely Malicious', 30: 'Might Be Malicious',50: 'Unknown',70:"Might Be Trusted",86: "Most Likely Trusted", 99: "Known Trusted"}
+## TIE Provider Map
 providerMap = {1:'GTI', 3:'Enterprise Reputation'}
 
 ## Start Web API
@@ -124,6 +111,7 @@ def tierep(md5,sha1):
     sha1_hex = sha1
 
 
+    ## Make sure an MD5 or SHA1 hash are given
     if (md5_hex) or (sha1_hex):
         with DxlClient(config) as client:
             # Connect to the fabric
@@ -134,8 +122,12 @@ def tierep(md5,sha1):
             response_dict = get_tie_file_reputation(client=client,
                                                     md5_hex= md5_hex,
                                                     sha1_hex=sha1_hex)
+
+        ### Filename You are Checking in TIE
         filename = "putty.exe"
+        ### Dump Dictionary into JSON
         myReturnVal = json.dumps(response_dict, sort_keys=True, indent=4, separators=(',', ': '))
+        ### Load JSON into fileProps Dictionary
         fileProps = json.loads(myReturnVal)
 
         print fileProps['props']
