@@ -21,6 +21,9 @@
 2. cd opendxl-cookbook/
 3. Run vssh.sh (On Windows Launch from Git Bash)
 4. At vagrant@vagrant-ubuntu-trusty-64:/ prompt type cd /vagrant
+5. Copy broker certificates to brokercerts/ directory
+6. Copy client certificates to the certs/ directory
+7. Copy dxlclient.config to your / root directory
 
 ## Running TIE Web API Recipe
 1. Run 'flask run --host=0.0.0.0'
