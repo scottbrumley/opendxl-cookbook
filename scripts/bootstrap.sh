@@ -12,13 +12,13 @@ else
     sudo apt-get update
     sudo apt-get -y upgrade
 
-    sudo echo 'deb http://httpredir.debian.org/debian jessie main' >> python-jessie.list
-    sudo echo 'deb-src http://httpredir.debian.org/debian jessie main' >> python-jessie.list
-    sudo echo 'deb http://httpredir.debian.org/debian jessie-updates main' >> python-jessie.list
-    sudo echo 'deb-src http://httpredir.debian.org/debian jessie-updates main' >> python-jessie.list
-    sudo echo 'deb http://security.debian.org/ jessie/updates main' >> python-jessie.list
-    sudo echo 'deb-src http://security.debian.org/ jessie/updates main' >> python-jessie.list
-    sudo mv python-jessie.list /etc/apt/sources.list.d/python-jessie.list
+    echo "deb http://httpredir.debian.org/debian trusty main" | sudo tee -a /etc/apt/sources.list.d/python-trusty.list
+    echo "deb-src http://httpredir.debian.org/debian trusty main" | sudo tee -a /etc/apt/sources.list.d/python-trusty.list
+    echo "deb http://httpredir.debian.org/debian trusty-updates main" | sudo tee -a /etc/apt/sources.list.d/python-trusty.list
+    echo "deb-src http://httpredir.debian.org/debian trusty-updates main" | sudo tee -a /etc/apt/sources.list.d/python-trusty.list
+    echo "deb http://security.debian.org/ trusty/updates main" | sudo tee -a /etc/apt/sources.list.d/python-trusty.list
+    echo "deb-src http://security.debian.org/ trusty/updates main" | sudo tee -a /etc/apt/sources.list.d/python-trusty.list
+
 
     sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 8B48AD6246925553
     sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 7638D0442B90D010
