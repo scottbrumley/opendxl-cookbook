@@ -2,22 +2,19 @@
 # (TIE) DXL service to retrieve the the reputation of files (as identified
 # by their hashes)
 
+import base64
+import json
 import logging
 import os
 import sys
-import json
-import base64
-
 from dxlclient.client import DxlClient
 from dxlclient.client_config import DxlClientConfig
 from dxlclient.message import Message, Request
-
 from flask import Flask
 from flask import render_template
 
 # Import common logging and configuration
 sys.path.append(os.path.dirname(os.path.abspath(__file__)) + "/..")
-from common import *
 
 # Configure local logger
 logging.getLogger().setLevel(logging.ERROR)
