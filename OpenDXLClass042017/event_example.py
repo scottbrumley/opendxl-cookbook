@@ -23,9 +23,9 @@ logging.getLogger().setLevel(logging.ERROR)
 logger = logging.getLogger(__name__)
 
 # The topic to publish to
-#SERVICE_TOPIC = "/scottbrumley/sample/basicevent"
+SERVICE_TOPIC = "/scottbrumley/sample/basicevent"
 #SERVICE_TOPIC = "/odxl/service/hello"
-SERVICE_TOPIC = "/odxl/puzzler/service/6degrees"
+#SERVICE_TOPIC = "/odxl/puzzler/service/6degrees"
 
 # The total number of events to send
 TOTAL_EVENTS = 10
