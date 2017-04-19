@@ -5,6 +5,12 @@
 REQ_PY_VER="2.7.9"
 REQ_SSL_VER="1.0.1"
 
+if [[ -d "/vagrant" ]]; then
+    $ROOT_DIR="/vagrant"
+else
+    $ROOT_DIR="/root"
+fi
+
 installPython(){
     PY_VER=$(python -c 'import sys; print(sys.version)')
 
@@ -56,9 +62,9 @@ installCommonPython(){
 installOpenDXLCLient(){
     ### Install Open DXL Client
     echo "Installing Open DXL Client"
-    cd /vagrant
+    cd $ROOT_DIR
     sudo git clone https://github.com/opendxl/opendxl-bootstrap-python.git
-    cd /vagrant/opendxl-bootstrap-python
+    cd $ROOT_DIR/opendxl-bootstrap-python
     sudo python setup.py install
 }
 
@@ -75,9 +81,9 @@ fi
 
 createDXLConfigDirs(){
     ### Create Directories
-    sudo mkdir -p /vagrant/brokercerts
-    sudo mkdir -p /vagrant/certs
-    sudo touch /vagrant/dxlclient.config
+    sudo mkdir -p $ROOT_DIR/brokercerts
+    sudo mkdir -p $ROOT_DIR/certs
+    sudo touch $ROOT_DIR/dxlclient.config
 }
 
 installDocker(){
@@ -93,7 +99,7 @@ installFlask(){
     ## Setup Flask
     ## Use flask run --host=0.0.0.0 to start Flask
     sudo pip install Flask
-    sudo echo 'export FLASK_APP=/vagrant/examples/tie_rep_api.py' >> /etc/bash.bashrc
+    sudo echo 'export FLASK_APP=$ROOT_DIR/examples/tie_rep_api.py' >> /etc/bash.bashrc
 }
 
 installPython
