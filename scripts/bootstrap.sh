@@ -6,9 +6,9 @@ REQ_PY_VER="2.7.9"
 REQ_SSL_VER="1.0.1"
 
 if [[ -d "/vagrant" ]]; then
-    $ROOT_DIR="/vagrant"
+    ROOT_DIR="/vagrant"
 else
-    $ROOT_DIR="/root"
+    ROOT_DIR=$(pwd)
 fi
 
 installPython(){
@@ -62,9 +62,9 @@ installCommonPython(){
 installOpenDXLCLient(){
     ### Install Open DXL Client
     echo "Installing Open DXL Client"
-    cd $ROOT_DIR
+    cd ${ROOT_DIR}
     sudo git clone https://github.com/opendxl/opendxl-bootstrap-python.git
-    cd $ROOT_DIR/opendxl-bootstrap-python
+    cd ${ROOT_DIR}opendxl-bootstrap-python
     sudo python setup.py install
 }
 
@@ -81,9 +81,9 @@ fi
 
 createDXLConfigDirs(){
     ### Create Directories
-    sudo mkdir -p $ROOT_DIR/brokercerts
-    sudo mkdir -p $ROOT_DIR/certs
-    sudo touch $ROOT_DIR/dxlclient.config
+    sudo mkdir -p ${ROOT_DIR}/brokercerts
+    sudo mkdir -p ${ROOT_DIR}/certs
+    sudo touch ${ROOT_DIR}/dxlclient.config
 }
 
 installDocker(){
@@ -94,6 +94,8 @@ installDocker(){
     sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
     sudo apt-get update
     sudo apt-get install -y docker-ce
+    sudo gpasswd -a vagrant docker
+    sudo service docker restart
 }
 installFlask(){
     ## Setup Flask
@@ -108,5 +110,8 @@ installPip
 installCommonPython
 installOpenDXLCLient
 checkOpenSSL
-installDocker
+
+if [[ "${ROOT_DIR}" == "/vagrant" ]]; then
+    installDocker
+fi
 #installFlask
