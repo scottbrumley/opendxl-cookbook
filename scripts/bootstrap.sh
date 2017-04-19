@@ -84,7 +84,7 @@ installFlask(){
     ## Setup Flask
     ## Use flask run --host=0.0.0.0 to start Flask
     sudo pip install Flask
-    sudo echo 'export FLASK_APP=/vagrant/tie_rep_api.py' >> /etc/bash.bashrc
+    sudo echo 'export FLASK_APP=/vagrant/examples/tie_rep_api.py' >> /etc/bash.bashrc
 }
 
 installPython
