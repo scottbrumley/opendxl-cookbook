@@ -6,9 +6,9 @@ REQ_PY_VER="2.7.9"
 REQ_SSL_VER="1.0.1"
 
 if [[ -d "/vagrant" ]]; then
-    ROOT_DIR="/vagrant"
+    ROOT_DIR="/vagrant/"
 else
-    ROOT_DIR=$(pwd)
+    ROOT_DIR="$(pwd)/"
 fi
 
 installPython(){
@@ -33,13 +33,13 @@ installPython(){
         sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 7638D0442B90D010
         sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 9D6D8F6BC857C906
 
-        sudo echo 'Package: *' >> python-jessie-pin
-        sudo echo 'Pin: release o=Debian' >> python-jessie-pin
-        sudo echo 'Pin-Priority: -10' >> python-jessie-pin
-        sudo mv python-jessie-pin /etc/apt/preferences.d/python-jessie-pin
+        sudo echo 'Package: *' >> python-trusty-pin
+        sudo echo 'Pin: release o=Debian' >> python-trusty-pin
+        sudo echo 'Pin-Priority: -10' >> python-trusty-pin
+        sudo mv python-trusty-pin /etc/apt/preferences.d/python-trusty-pin
 
         sudo apt-get update
-        sudo apt-get install -y -t jessie python2.7
+        sudo apt-get install -y -t trusty python2.7
     fi
 }
 
@@ -81,9 +81,9 @@ fi
 
 createDXLConfigDirs(){
     ### Create Directories
-    sudo mkdir -p ${ROOT_DIR}/brokercerts
-    sudo mkdir -p ${ROOT_DIR}/certs
-    sudo touch ${ROOT_DIR}/dxlclient.config
+    sudo mkdir -p ${ROOT_DIR}brokercerts
+    sudo mkdir -p ${ROOT_DIR}certs
+    sudo touch ${ROOT_DIR}dxlclient.config
 }
 
 installDocker(){
@@ -104,12 +104,16 @@ installFlask(){
     sudo echo 'export FLASK_APP=$ROOT_DIR/examples/tie_rep_api.py' >> /etc/bash.bashrc
 }
 
+installDos2Unix(){
+    sudo apt-get install -y dos2unix
+}
 installPython
 installGit
 installPip
 installCommonPython
 installOpenDXLCLient
 checkOpenSSL
+installDos2Unix
 
 if [[ "${ROOT_DIR}" == "/vagrant" ]]; then
     installDocker
