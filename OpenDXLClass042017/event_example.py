@@ -24,7 +24,8 @@ logger = logging.getLogger(__name__)
 
 # The topic to publish to
 #SERVICE_TOPIC = "/scottbrumley/sample/basicevent"
-SERVICE_TOPIC = "/odxl/service/hello"
+#SERVICE_TOPIC = "/odxl/service/hello"
+SERVICE_TOPIC = "/odxl/puzzler/service/6degrees"
 
 # The total number of events to send
 TOTAL_EVENTS = 10
@@ -51,7 +52,7 @@ with DxlClient(config) as client:
     # Create and add event listener
     req = Request(SERVICE_TOPIC)
 
-    req.payload = "Scott Brumley".encode()
+    req.payload = "Rosamund Pike".encode()
 
     res = client.sync_request(req)
 
