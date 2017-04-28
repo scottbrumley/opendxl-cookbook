@@ -107,6 +107,11 @@ installFlask(){
 installDos2Unix(){
     sudo apt-get install -y dos2unix
 }
+
+installSlackClient(){
+    sudo pip install slackclient
+}
+
 installPython
 installGit
 installPip
