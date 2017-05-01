@@ -8,4 +8,3 @@ else
     ROOT_DIR="$(pwd)/"
 fi
 
-
