@@ -23,8 +23,8 @@ logger = logging.getLogger(__name__)
 
 # The topic for the service to respond to
 #SERVICE_TOPIC = "/scottbrumley/sample/basicevent"
-SERVICE_TOPIC = "/mcafee/event/tie/file/repchange/broadcast"
-#SERVICE_TOPIC = "#"
+#SERVICE_TOPIC = "/mcafee/event/tie/file/repchange/broadcast"
+SERVICE_TOPIC = "/mcafee/#"
 
 # Create DXL configuration from file
 config = DxlClientConfig.create_dxl_config_from_file(CONFIG_FILE)
@@ -37,6 +37,7 @@ with DxlClient(config) as client:
         def on_event(self, event):
             # Extract
             resultStr = json.loads(event.payload.decode())
+            print event.destination_topic
             print resultStr
 
     client.add_event_callback(SERVICE_TOPIC, ChgRepCallback())
